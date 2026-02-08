@@ -1,0 +1,35 @@
+# SOTA 2026: Optimized .vscodeignore for bundled extension
+# Only include what's actually needed
+
+# Source files (bundled into out/extension.js)
+src/**
+*.ts
+tsconfig.json
+esbuild.js
+
+# Development files
+.vscode/**
+.github/**
+.git/**
+*.md
+!README.md
+!CHANGELOG.md
+
+# Node modules (bundled by esbuild)
+node_modules/**
+
+# Webview source (built into out/webview/)
+webview-ui/src/**
+webview-ui/node_modules/**
+webview-ui/*.json
+webview-ui/*.ts
+webview-ui/*.config.*
+webview-ui/index.html
+
+# Tests
+**/test/**
+**/*.test.ts
+
+# Build artifacts
+*.vsix
+*.vsix

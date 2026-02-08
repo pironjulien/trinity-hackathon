@@ -1,0 +1,92 @@
+.angel-player-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: black;
+}
+
+.angel-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.angel-video.hidden {
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 1.2s ease-in 0.3s;
+    /* Delay fade-out, slower */
+}
+
+.angel-video.visible {
+    opacity: 1;
+    z-index: 10;
+    transition: opacity 0.8s ease-out;
+    /* Faster fade-in, no delay */
+}
+
+/* Play button overlay when autoplay is blocked */
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.play-button {
+    padding: 16px 32px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #4285F4, #34A853);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.4);
+}
+
+.play-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.6);
+}
+
+/* Sound Toggle Button - VS Code Style */
+.sound-toggle {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: var(--vscode-button-secondaryBackground, #3c3c3c);
+    border: 1px solid var(--vscode-button-border, #5a5a5a);
+    color: var(--vscode-button-secondaryForeground, #cccccc);
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 100;
+    transition: background 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+}
+
+.sound-toggle:hover {
+    background: var(--vscode-button-secondaryHoverBackground, #505050);
+    opacity: 1;
+}

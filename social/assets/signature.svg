@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="215" height="50" viewBox="0 0 215 50">
+  <style>
+    .text { font-family: 'Product Sans', Arial, sans-serif; font-size: 30px; font-weight: bold; }
+  </style>
+  <text x="5" y="35" class="text">
+    <tspan fill="#4285F4">J</tspan><tspan fill="#DB4437">u</tspan><tspan fill="#F4B400">l</tspan><tspan fill="#4285F4">i</tspan><tspan fill="#0F9D58">e</tspan><tspan fill="#DB4437">n</tspan><tspan fill="#4285F4">p</tspan><tspan fill="#DB4437">i</tspan><tspan fill="#F4B400">r</tspan><tspan fill="#4285F4">o</tspan><tspan fill="#0F9D58">n</tspan><tspan fill="#787878">.</tspan><tspan fill="#4285F4">f</tspan><tspan fill="#DB4437">r</tspan>
+  </text>
+</svg>

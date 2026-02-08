@@ -1,0 +1,106 @@
+{
+    "ui": {
+        "commands": "COMMANDS",
+        "jobs": "JOBS",
+        "status": "STATUS",
+        "alerts": "ALERTS",
+        "angel": "ANGEL",
+        "trinity": "TRINITY",
+        "jules": "JULES",
+        "social": "SOCIAL",
+        "trader": "TRADER",
+        "youtuber": "YOUTUBER",
+        "influencer": "INFLUENCER",
+        "tokens": "TOKENS",
+        "history": "HISTORY",
+        "language": "Language",
+        "connSetup": "📡 Connection Setup..."
+    },
+    "stats": {
+        "cpu": "CPU",
+        "ram": "RAM",
+        "disk": "DISK"
+    },
+    "jobs": {
+        "trader": "TRADER",
+        "youtuber": "YOUTUBER",
+        "influencer": "INFLUENCER"
+    },
+    "actions": {
+        "web": "WEB",
+        "go": "GO",
+        "stop": "STOP",
+        "health": "HEALTH",
+        "deploy": "DEPLOY"
+    },
+    "status": {
+        "vm": "VM",
+        "trinity": "TRINITY",
+        "work": "WORK",
+        "active": "Active",
+        "offline": "Offline",
+        "connecting": "Connecting...",
+        "systemOffline": "SYSTEM OFFLINE",
+        "systemConnecting": "CONNECTING...",
+        "systemDisconnecting": "DISCONNECTING...",
+        "angelOnline": "ANGEL SYSTEM ONLINE",
+        "videoMissing": "(Video Asset Missing)"
+    },
+    "modals": {
+        "deploySuccessTitle": "✅ Deployed!",
+        "deploySuccessHeader": "Trinity Started",
+        "deploySuccessDesc": "Trinity is now active and operational.",
+        "deployFailTitle": "❌ Failed",
+        "deployFailHeader": "Deployment Error",
+        "deployFailDesc": "Process exited with code {code}.<br>Check logs above.",
+        "stoppedTitle": "🛑 Trinity Stopped",
+        "stoppedHeader": "Trinity Sleeping",
+        "stoppedDesc": "Core system halted. Angel is listening.",
+        "alreadyStoppedDesc": "Trinity (Already offline).",
+        "containerNotRunningTitle": "🐳 Container Not Running",
+        "containerNotRunningHeader": "Local container is not running",
+        "containerNotRunningDesc": "Restart VS Code to start the container automatically.",
+        "containerNotRunningAction": "Or run manually: docker-compose up -d",
+        "deployingTitle": "🚀 Deploying...",
+        "deployingHeader": "Starting Trinity",
+        "deployingDesc": "Initializing Direct Connection...",
+        "stoppingTitle": "🛑 Stopping...",
+        "stoppingHeader": "Shutting Down Trinity",
+        "stoppingDesc": "Sending stop signal to Core..."
+    },
+    "console": {
+        "time": "TIME",
+        "level": "LEVEL",
+        "module": "MODULE",
+        "function": "FUNCTION",
+        "message": "MESSAGE",
+        "model": "MODEL",
+        "route": "ROUTE",
+        "key": "KEY",
+        "source": "SOURCE",
+        "in": "IN",
+        "out": "OUT",
+        "total": "TOTAL",
+        "cleared": "Cleared!",
+        "copied": "Copied!",
+        "clear": "Clear",
+        "copy": "Copy"
+    },
+    "commands": {
+        "igniting": "> 🧬 Igniting Trinity Core...",
+        "stopping": "> 🛑 Stopping Trinity...",
+        "deploying": "> 🚀 Deploying to {target}...",
+        "checking": "> 🩺 Running Health Check..."
+    },
+    "breakdown": {
+        "title": "Memory Breakdown",
+        "angel": "Angel",
+        "trinity": "Trinity",
+        "chrome": "Chrome",
+        "vscode": "VS Code",
+        "other": "Other"
+    },
+    "tooltips": {
+        "switch": "Switch to {tab}"
+    }
+}

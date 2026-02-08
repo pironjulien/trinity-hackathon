@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00f3ff;
+  --color-neon-pink: #ff0055;
+  --color-void: #050510;
+  --color-glass: rgba(10, 15, 30, 0.4);
+
+  --font-mono: 'Google Sans Flex', monospace;
+
+  --animate-shake: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+
+  @keyframes shake {
+
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-void);
+  color: white;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  /* Vignette Effect (Subtle) */
+  background: radial-gradient(circle at center, transparent 60%, #000 100%);
+}
+
+/* Scrollbar Hide */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* --- SOTA FX --- */
+
+/* 1. CRT Scanlines */
+/* 1. CRT Scanlines - REMOVED */
+/* .scanlines::before { REMOVED } */
+
+/* 2. Text Glitch Animation (Utility Class) */
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 #00fff9;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(70px, 9999px, 86px, 0);
+  }
+
+  20% {
+    clip: rect(29px, 9999px, 16px, 0);
+  }
+
+  40% {
+    clip: rect(76px, 9999px, 3px, 0);
+  }
+
+  60% {
+    clip: rect(42px, 9999px, 18px, 0);
+  }
+
+  80% {
+    clip: rect(15px, 9999px, 13px, 0);
+  }
+
+  100% {
+    clip: rect(63px, 9999px, 60px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 96px, 0);
+  }
+
+  20% {
+    clip: rect(10px, 9999px, 3px, 0);
+  }
+
+  40% {
+    clip: rect(56px, 9999px, 63px, 0);
+  }
+
+  60% {
+    clip: rect(32px, 9999px, 28px, 0);
+  }
+
+  80% {
+    clip: rect(65px, 9999px, 13px, 0);
+  }
+
+  100% {
+    clip: rect(23px, 9999px, 80px, 0);
+  }
+}
+
+/* 3. Mask Linear Fade for Logs */
+.mask-linear-fade {
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 100%);
+}
+
+/* 4. Neon Border Animation (Stop Trinity) */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-border {
+  to {
+    --angle: 360deg;
+  }
+}
+
+.btn-neon-danger {
+  position: relative;
+  isolation: isolate;
+  /* background: rgba(30, 0, 0, 0.6); - Handled by ::after */
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* spinning light */
+.btn-neon-danger::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 600%;
+  background: conic-gradient(from var(--angle), transparent 85%, #ff0000 100%);
+  transform: translate(-50%, -50%);
+  animation: spin-border 3s linear infinite;
+  z-index: -2;
+}
+
+/* Inner button bg to mask center */
+.btn-neon-danger::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(to bottom, #1a0505, #000);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.text-glow-red {
+  text-shadow: 0 0 10px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+/* 5. Generic Neon Button (Primary) */
+.btn-neon-primary {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  overflow: hidden;
+}
+
+.btn-neon-primary::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 600%;
+  background: conic-gradient(from var(--angle), transparent 85%, var(--color-neon-blue) 100%);
+  transform: translate(-50%, -50%);
+  animation: spin-border 3s linear infinite;
+  z-index: -2;
+}
+
+.btn-neon-primary::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(to bottom, #001015, #000);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 5px var(--color-neon-blue), 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+/* 6. Generic Neon Button (Green) - Sound/Trader */
+.btn-neon-green {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  overflow: hidden;
+}
+
+.btn-neon-green::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 600%;
+  background: conic-gradient(from var(--angle), transparent 85%, #22c55e 100%);
+  transform: translate(-50%, -50%);
+  animation: spin-border 3s linear infinite;
+  z-index: -2;
+}
+
+.btn-neon-green::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(to bottom, #001500, #000);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.text-glow-green {
+  text-shadow: 0 0 5px #22c55e, 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+/* 7. Generic Neon Button (Pink) - Influencer */
+.btn-neon-pink {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(236, 72, 153, 0.2);
+  overflow: hidden;
+}
+
+.btn-neon-pink::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 600%;
+  background: conic-gradient(from var(--angle), transparent 85%, #ec4899 100%);
+  transform: translate(-50%, -50%);
+  animation: spin-border 3s linear infinite;
+  z-index: -2;
+}
+
+.btn-neon-pink::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(to bottom, #150005, #000);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 5px #ec4899, 0 0 10px rgba(236, 72, 153, 0.5);
+}
+
+/* 8. Generic Neon Button (Purple) - YouTuber */
+.btn-neon-purple {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  overflow: hidden;
+}
+
+.btn-neon-purple::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 600%;
+  background: conic-gradient(from var(--angle), transparent 85%, #a855f7 100%);
+  transform: translate(-50%, -50%);
+  animation: spin-border 3s linear infinite;
+  z-index: -2;
+}
+
+.btn-neon-purple::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: linear-gradient(to bottom, #150015, #000);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 5px #a855f7, 0 0 10px rgba(168, 85, 247, 0.5);
+}

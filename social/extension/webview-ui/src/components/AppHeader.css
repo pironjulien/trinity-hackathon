@@ -1,0 +1,237 @@
+/* AppHeader.css */
+.app-header {
+    height: var(--trinity-header-height, 48px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--trinity-space-lg, 16px);
+    background: var(--trinity-bg-card, #1e1e1e);
+    border-bottom: 1px solid var(--trinity-border-light, rgba(255, 255, 255, 0.08));
+    flex-shrink: 0;
+    position: relative;
+    user-select: none;
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--trinity-space-md, 12px);
+}
+
+.brand {
+    font-size: var(--trinity-font-size-lg, 14px);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.version-tag {
+    font-size: var(--trinity-font-size-sm, 11px);
+    opacity: 0.9;
+    margin-left: 6px;
+    font-weight: 400;
+    color: #82B1FF;
+    text-shadow: 0 0 8px rgba(130, 177, 255, 0.6);
+}
+
+.matrix-tag {
+    font-family: var(--trinity-font-mono);
+    font-size: 11px;
+    font-weight: bold;
+    color: #00ff41;
+    text-shadow: 0 0 5px #00ff41;
+    margin-left: 6px;
+    background: rgba(0, 20, 0, 0.5);
+    padding: 1px 4px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+/* Cylon Bar */
+.cylon-container {
+    flex: 1;
+    margin: 0 var(--trinity-space-lg, 16px);
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    min-width: 40px;
+}
+
+.cylon-bar {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(90deg, transparent, #448AFF, #82B1FF, transparent);
+    animation: scan 3s ease-in-out infinite alternate;
+}
+
+.cylon-bar.pulse-active {
+    box-shadow: 0 0 15px currentColor;
+}
+
+@keyframes scan {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* AI Quote Overlay */
+.ai-quote-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    font-style: italic;
+    color: #00ff41;
+    text-shadow: 0 0 8px #00ff41, 0 0 15px rgba(0, 255, 65, 0.5);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+    pointer-events: none;
+    z-index: 10;
+    font-family: var(--trinity-font-family);
+    animation: quoteFadeIn 0.5s ease-out;
+}
+
+@keyframes quoteFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Header Language Switch */
+.lang-switch-header {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    padding: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-switch-header span {
+    padding: 3px 8px;
+    font-size: 11px;
+    cursor: pointer;
+    color: var(--trinity-text-muted);
+    border-radius: 3px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.lang-switch-header span:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lang-switch-header span.active {
+    background: #4285F4;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(66, 133, 244, 0.4);
+}
+
+/* ============================================================================ */
+/* SOTA 2026: SENTINEL BUTTONS (Header Alert Indicators)                        */
+/* ============================================================================ */
+
+.header-sentinels {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.sentinel-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.sentinel-btn.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+.sentinel-btn.disabled:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: none;
+}
+
+/* Jules Button (Emerald Green Glow) */
+.sentinel-btn.glow-jules {
+    border-color: #00ff41;
+    background: rgba(0, 255, 65, 0.1);
+    animation: sentinel-pulse-jules 2s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4), inset 0 0 8px rgba(0, 255, 65, 0.1);
+}
+
+.sentinel-btn.glow-jules:hover {
+    background: rgba(0, 255, 65, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.6), inset 0 0 12px rgba(0, 255, 65, 0.2);
+}
+
+@keyframes sentinel-pulse-jules {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(0, 255, 65, 0.3), inset 0 0 6px rgba(0, 255, 65, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 65, 0.6), inset 0 0 12px rgba(0, 255, 65, 0.2);
+    }
+}
+
+/* Evolution Button (Magenta/Pink Glow) */
+.sentinel-btn.glow-evolution {
+    border-color: #ff00ff;
+    background: rgba(255, 0, 255, 0.1);
+    animation: sentinel-pulse-evolution 2.5s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.4), inset 0 0 8px rgba(255, 0, 255, 0.1);
+}
+
+.sentinel-btn.glow-evolution:hover {
+    background: rgba(255, 0, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6), inset 0 0 12px rgba(255, 0, 255, 0.2);
+}
+
+@keyframes sentinel-pulse-evolution {
+    0%, 100% {
+        box-shadow: 0 0 8px rgba(255, 0, 255, 0.3), inset 0 0 6px rgba(255, 0, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 255, 0.6), inset 0 0 12px rgba(255, 0, 255, 0.2);
+    }
+}
+
+/* Count Badge */
+.sentinel-count {
+    font-size: 11px;
+    font-weight: 700;
+    font-family: var(--trinity-font-mono);
+    color: #fff;
+    text-shadow: 0 0 6px currentColor;
+}

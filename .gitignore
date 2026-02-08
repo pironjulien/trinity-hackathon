@@ -1,0 +1,21 @@
+# ══════════════════════════════════════
+# TRINITY GITIGNORE (UNRESTRICTED)
+# ══════════════════════════════════════
+
+# Dependencies & Cache (Standard)
+node_modules/
+__pycache__/
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+# System Junk
+.DS_Store
+Thumbs.db
+tmp/
+temp/
+
+# Local Environment (Safety)
+.env
+.env.*
+!.env.example

@@ -1,0 +1,48 @@
+name: Trinity CI (The Immune System)
+
+# JULES-ONLY: Trigger only on PRs created by Jules
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+# Prevent spam: Only one run per PR at a time
+concurrency:
+  group: ci-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # JULES-ONLY: Skip if not created by Jules
+    if: contains(github.event.pull_request.user.login, 'jules') || contains(github.head_ref, 'jules')
+    
+    name: "🛡️ Immune System Check"
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      
+      - name: Install dependencies
+        run: |
+          pip install -q loguru pydantic aiohttp
+      
+      - name: "🔬 Syntax Check (corpus/)"
+        run: |
+          python -m py_compile corpus/**/*.py 2>/dev/null || python -m compileall -q corpus/
+      
+      - name: "🔬 Syntax Check (jules/)"
+        run: |
+          python -m py_compile jules/*.py 2>/dev/null || python -m compileall -q jules/
+      
+      - name: "🔬 Syntax Check (jobs/)"
+        run: |
+          python -m py_compile jobs/**/*.py 2>/dev/null || python -m compileall -q jobs/
+
+# ════════════════════════════════════════════════════════════════════════════════
+# NO AUTO-MERGE: Human validation required for all PRs
+# Jules CI Auto-Fixer will push fixes, but merge requires manual approval
+# ════════════════════════════════════════════════════════════════════════════════

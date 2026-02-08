@@ -1,0 +1,66 @@
+.jobs-panel {
+    flex: 1;
+}
+
+.panel-header {
+    font-size: var(--trinity-font-size-sm, 11px);
+    font-weight: 600;
+    color: var(--trinity-text-muted, #888);
+    margin-bottom: var(--trinity-space-sm, 8px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--trinity-space-sm, 8px);
+}
+
+.job-row {
+    display: flex;
+    align-items: center;
+    gap: var(--trinity-space-sm, 8px);
+    font-size: var(--trinity-font-size-base, 12px);
+    color: var(--trinity-text-secondary, #bbb);
+}
+
+.job-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--trinity-text-disabled, #444);
+    transition: all 0.3s ease;
+}
+
+.job-dot.active {
+    background: var(--trinity-success, #81C995);
+    box-shadow: 0 0 6px rgba(129, 201, 149, 0.4);
+}
+
+.job-dot.flash {
+    animation: job-flash 0.3s ease-out;
+}
+
+@keyframes job-flash {
+    0% {
+        transform: scale(1.2);
+        filter: brightness(3) drop-shadow(0 0 5px #fff);
+        background: #fff;
+    }
+    
+    50% {
+        transform: scale(1.4);
+        filter: brightness(2) drop-shadow(0 0 3px #fff);
+        background: #fff;
+    }
+
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+.job-label {
+    font-weight: 500;
+}

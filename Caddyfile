@@ -1,0 +1,18 @@
+julienpiron.fr, trinity.julienpiron.fr {
+	reverse_proxy 127.0.0.1:8089
+
+	# SOTA 2026: Security Headers
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-XSS-Protection "1; mode=block"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		# X-Frame-Options removed: Allow VSCode Extension embedding
+	}
+
+	# SOTA 2026: Aggressive caching for static assets (1 year, immutable)
+	@static_assets {
+		path /videos/* /jules/* /images/* *.webm *.webp *.woff2 *.png *.jpg
+	}
+	header @static_assets Cache-Control "public, max-age=31536000, immutable"
+}
