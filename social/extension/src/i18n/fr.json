@@ -1,0 +1,106 @@
+{
+    "ui": {
+        "commands": "COMMANDES",
+        "jobs": "JOBS",
+        "status": "STATUT",
+        "alerts": "ALERTES",
+        "angel": "ANGEL",
+        "trinity": "TRINITY",
+        "jules": "JULES",
+        "social": "SOCIAL",
+        "trader": "TRADEUR",
+        "youtuber": "YOUTUBER",
+        "influencer": "INFLUENCER",
+        "tokens": "TOKENS",
+        "history": "HISTORIQUE",
+        "language": "Langue",
+        "connSetup": "📡 Config. Connexion..."
+    },
+    "stats": {
+        "cpu": "PROC",
+        "ram": "MEM",
+        "disk": "DISQUE"
+    },
+    "jobs": {
+        "trader": "TRADER",
+        "youtuber": "YOUTUBER",
+        "influencer": "INFLUENCEUR"
+    },
+    "actions": {
+        "web": "WEB",
+        "go": "GO",
+        "stop": "STOP",
+        "health": "SANTÉ",
+        "deploy": "DÉPLOYER"
+    },
+    "status": {
+        "vm": "VM",
+        "trinity": "TRINITY",
+        "work": "TRAVAIL",
+        "active": "Actif",
+        "offline": "Hors ligne",
+        "connecting": "Connexion...",
+        "systemOffline": "SYSTÈME HORS LIGNE",
+        "systemConnecting": "CONNEXION...",
+        "systemDisconnecting": "DÉCONNEXION...",
+        "angelOnline": "SYSTÈME ANGEL EN LIGNE",
+        "videoMissing": "(Vidéo manquante)"
+    },
+    "modals": {
+        "deploySuccessTitle": "✅ Déployé !",
+        "deploySuccessHeader": "Trinity Lancée",
+        "deploySuccessDesc": "Le système est opérationnel et actif.",
+        "deployFailTitle": "❌ Échec",
+        "deployFailHeader": "Erreur lors du déploiement",
+        "deployFailDesc": "Le processus s'est terminé avec le code {code}.<br>Vérifiez les logs ci-dessus.",
+        "stoppedTitle": "🛑 Trinity Arrêté",
+        "stoppedHeader": "Trinity en Veille",
+        "stoppedDesc": "Le Core est éteint. Angel reste à l'écoute.",
+        "alreadyStoppedDesc": "Trinity (Déjà éteint).",
+        "containerNotRunningTitle": "🐳 Conteneur Inactif",
+        "containerNotRunningHeader": "Le conteneur local n'est pas lancé",
+        "containerNotRunningDesc": "Redémarrez VS Code pour démarrer le conteneur automatiquement.",
+        "containerNotRunningAction": "Ou lancez manuellement : docker-compose up -d",
+        "deployingTitle": "🚀 Déploiement...",
+        "deployingHeader": "Lancement de Trinity",
+        "deployingDesc": "Initialisation de la Connexion Directe...",
+        "stoppingTitle": "🛑 Arrêt...",
+        "stoppingHeader": "Extinction de Trinity",
+        "stoppingDesc": "Envoi du signal d'arrêt au Core..."
+    },
+    "console": {
+        "time": "HEURE",
+        "level": "NIVEAU",
+        "module": "MODULE",
+        "function": "FONCTION",
+        "message": "MESSAGE",
+        "model": "MODÈLE",
+        "route": "ROUTE",
+        "key": "CLÉ",
+        "source": "SOURCE",
+        "in": "ENT",
+        "out": "SORT",
+        "total": "TOTAL",
+        "cleared": "Effacé !",
+        "copied": "Copié !",
+        "clear": "Effacer",
+        "copy": "Copier"
+    },
+    "commands": {
+        "igniting": "> 🧬 Allumage du Core Trinity...",
+        "stopping": "> 🛑 Arrêt de Trinity...",
+        "deploying": "> 🚀 Déploiement vers {target}...",
+        "checking": "> 🩺 Vérification de santé..."
+    },
+    "breakdown": {
+        "title": "Détails Mémoire",
+        "angel": "Angel",
+        "trinity": "Trinity",
+        "chrome": "Chrome",
+        "vscode": "VS Code",
+        "other": "Autre"
+    },
+    "tooltips": {
+        "switch": "Voir {tab}"
+    }
+}

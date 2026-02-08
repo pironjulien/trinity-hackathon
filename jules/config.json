@@ -1,0 +1,18 @@
+{
+    "active": true,
+    "self_review": true,
+    "self_evolution": false,
+    "nightwatch": true,
+    "sandbox_mode": true,
+    "require_plan_approval": false,
+    "auto_repoless": true,
+    "target_prs_per_night": 3,
+    "max_attempts": 10,
+    "notifications": {
+        "on_pr_created": true,
+        "on_pr_merged": true,
+        "on_council_complete": true,
+        "on_mission_failed": false
+    },
+    "description": "Jules V3 Configuration"
+}

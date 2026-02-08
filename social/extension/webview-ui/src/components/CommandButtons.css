@@ -1,0 +1,84 @@
+/* CommandButtons.css */
+.commands-container {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.command-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.group-header {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--trinity-text-secondary, #8b949e);
+    text-align: center;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.buttons-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.cmd-btn {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: var(--trinity-radius-xl, 16px);
+    background: var(--trinity-bg-hover, #2c2c2c);
+    color: var(--trinity-text-primary, #e2e2e2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cmd-btn:hover {
+    background: var(--trinity-bg-active, #383838);
+    transform: translateY(-2px);
+    box-shadow: var(--trinity-shadow-md, 0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.cmd-btn:active {
+    transform: scale(0.96);
+}
+
+.cmd-icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.cmd-label {
+    font-size: var(--trinity-font-size-xs, 10px);
+    font-weight: 600;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* Semantic hover colors */
+.cmd-btn.deploy:hover,
+.cmd-btn.deploy.is-active {
+    background: rgba(129, 201, 149, 0.2);
+    color: var(--trinity-success, #81C995);
+}
+
+.cmd-btn.deploy.is-active {
+    background: rgba(129, 201, 149, 0.3);
+    box-shadow: 0 0 10px rgba(129, 201, 149, 0.2);
+    border: 1px solid rgba(129, 201, 149, 0.4);
+}
+
+.cmd-btn.stop:hover {
+    background: rgba(242, 139, 130, 0.2);
+    color: var(--trinity-error, #F28B82);
+}

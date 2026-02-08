@@ -1,0 +1,358 @@
+/**
+ * Trinity Control Center - CSS Design System
+ * Centralized CSS variables and theme tokens
+ */
+
+/* ============================================================================
+   Design Tokens
+   ============================================================================ */
+
+:root {
+    /* Colors - Dark Theme (Default) */
+    --trinity-bg-app: #121212;
+    --trinity-bg-card: #1e1e1e;
+    --trinity-bg-table: #252629;
+    --trinity-bg-hover: #2c2c2c;
+    --trinity-bg-active: #383838;
+    
+    /* Text Colors */
+    --trinity-text-primary: #e0e0e0;
+    --trinity-text-secondary: #aaaaaa;
+    --trinity-text-muted: #888888;
+    --trinity-text-disabled: #666666;
+
+    /* Brand Colors - Google Material */
+    --trinity-blue: #4285F4;
+    --trinity-red: #EA4335;
+    --trinity-yellow: #FBBC05;
+    --trinity-green: #34A853;
+
+    /* Accent Colors */
+    --trinity-primary: #8AB4F8;
+    --trinity-success: #81C995;
+    --trinity-warning: #FDD663;
+    --trinity-error: #F28B82;
+    --trinity-info: #8AB4F8;
+
+    /* Borders */
+    --trinity-border-subtle: rgba(255, 255, 255, 0.05);
+    --trinity-border-light: rgba(255, 255, 255, 0.08);
+    --trinity-border-medium: rgba(255, 255, 255, 0.1);
+
+    /* Shadows */
+    --trinity-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --trinity-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --trinity-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+    --trinity-shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.5);
+
+    /* Glassmorphism */
+    --trinity-glass: rgba(255, 255, 255, 0.05);
+    --trinity-glass-hover: rgba(255, 255, 255, 0.08);
+    --trinity-backdrop-blur: blur(8px);
+
+    /* Typography */
+    --trinity-font-family: 'Google Sans', 'Roboto', 'Segoe UI', system-ui, sans-serif;
+    --trinity-font-mono: 'Roboto Mono', 'Fira Code', 'Consolas', monospace;
+    
+    --trinity-font-size-xs: 10px;
+    --trinity-font-size-sm: 11px;
+    --trinity-font-size-base: 12px;
+    --trinity-font-size-md: 13px;
+    --trinity-font-size-lg: 14px;
+    --trinity-font-size-xl: 16px;
+    --trinity-font-size-2xl: 18px;
+
+    /* Spacing */
+    --trinity-space-xs: 4px;
+    --trinity-space-sm: 8px;
+    --trinity-space-md: 12px;
+    --trinity-space-lg: 16px;
+    --trinity-space-xl: 20px;
+    --trinity-space-2xl: 24px;
+
+    /* Border Radius */
+    --trinity-radius-sm: 4px;
+    --trinity-radius-md: 8px;
+    --trinity-radius-lg: 12px;
+    --trinity-radius-xl: 16px;
+    --trinity-radius-full: 9999px;
+
+    /* Transitions */
+    --trinity-transition-fast: 0.15s ease;
+    --trinity-transition-base: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --trinity-transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Z-Index Scale */
+    --trinity-z-dropdown: 100;
+    --trinity-z-modal: 200;
+    --trinity-z-tooltip: 300;
+
+    /* Layout */
+    --trinity-header-height: 48px;
+    --trinity-sidebar-width: 300px;
+    --trinity-console-height: 390px;
+}
+
+/* ============================================================================
+   Light Theme Override
+   ============================================================================ */
+
+.theme-light {
+    --trinity-bg-app: #f5f5f5;
+    --trinity-bg-card: #ffffff;
+    --trinity-bg-table: #fafafa;
+    --trinity-bg-hover: #f0f0f0;
+    --trinity-bg-active: #e8e8e8;
+
+    --trinity-text-primary: #202124;
+    --trinity-text-secondary: #5f6368;
+    --trinity-text-muted: #80868b;
+    --trinity-text-disabled: #bdc1c6;
+
+    --trinity-border-subtle: rgba(0, 0, 0, 0.05);
+    --trinity-border-light: rgba(0, 0, 0, 0.08);
+    --trinity-border-medium: rgba(0, 0, 0, 0.12);
+
+    --trinity-glass: rgba(0, 0, 0, 0.02);
+    --trinity-glass-hover: rgba(0, 0, 0, 0.05);
+
+    --trinity-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --trinity-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --trinity-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================================
+   Compact Mode
+   ============================================================================ */
+
+.compact-mode {
+    --trinity-header-height: 40px;
+    --trinity-font-size-base: 11px;
+    --trinity-space-md: 8px;
+    --trinity-space-lg: 12px;
+}
+
+/* ============================================================================
+   Base Reset
+   ============================================================================ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--trinity-font-family);
+    font-size: var(--trinity-font-size-base);
+    color: var(--trinity-text-primary);
+    background: var(--trinity-bg-app);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================================
+   Component Classes
+   ============================================================================ */
+
+/* Card */
+.trinity-card {
+    background: var(--trinity-bg-card);
+    border-radius: var(--trinity-radius-lg);
+    border: 1px solid var(--trinity-border-subtle);
+    padding: var(--trinity-space-md);
+}
+
+/* Button Base */
+.trinity-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--trinity-space-xs);
+    padding: var(--trinity-space-sm) var(--trinity-space-md);
+    border: none;
+    border-radius: var(--trinity-radius-md);
+    background: var(--trinity-bg-hover);
+    color: var(--trinity-text-primary);
+    font-size: var(--trinity-font-size-base);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--trinity-transition-base);
+}
+
+.trinity-btn:hover {
+    background: var(--trinity-bg-active);
+    transform: translateY(-1px);
+}
+
+.trinity-btn:active {
+    transform: scale(0.96);
+}
+
+/* Icon Button */
+.trinity-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: var(--trinity-radius-full);
+    background: transparent;
+    color: var(--trinity-text-secondary);
+    font-size: var(--trinity-font-size-lg);
+    cursor: pointer;
+    transition: var(--trinity-transition-base);
+}
+
+.trinity-icon-btn:hover {
+    background: var(--trinity-glass-hover);
+    color: var(--trinity-text-primary);
+}
+
+/* Status Indicator */
+.trinity-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--trinity-radius-full);
+    background: var(--trinity-text-disabled);
+    transition: var(--trinity-transition-base);
+}
+
+.trinity-dot.active {
+    background: var(--trinity-success);
+    box-shadow: 0 0 6px rgba(129, 201, 149, 0.4);
+}
+
+.trinity-dot.blue.active {
+    background: var(--trinity-primary);
+    box-shadow: 0 0 6px rgba(138, 180, 248, 0.4);
+}
+
+/* Pulse Animation */
+@keyframes trinity-flash {
+    0% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.5); filter: brightness(2); background: #fff; }
+    100% { transform: scale(1); filter: brightness(1); }
+}
+
+.trinity-dot.flash {
+    animation: trinity-flash 0.3s ease-out;
+}
+
+/* Tab */
+.trinity-tab {
+    padding: var(--trinity-space-md) 0;
+    font-size: var(--trinity-font-size-base);
+    font-weight: 500;
+    color: var(--trinity-text-muted);
+    cursor: pointer;
+    position: relative;
+    transition: var(--trinity-transition-base);
+}
+
+.trinity-tab:hover {
+    color: var(--trinity-text-secondary);
+}
+
+.trinity-tab.active {
+    color: var(--trinity-primary);
+    font-weight: 600;
+}
+
+.trinity-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--trinity-primary);
+    border-radius: 3px 3px 0 0;
+}
+
+/* Modal */
+.trinity-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: var(--trinity-backdrop-blur);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--trinity-z-modal);
+}
+
+.trinity-modal {
+    background: var(--trinity-bg-card);
+    border-radius: var(--trinity-radius-xl);
+    width: 90%;
+    max-width: 600px;
+    box-shadow: var(--trinity-shadow-xl);
+    border: 1px solid var(--trinity-border-medium);
+    overflow: hidden;
+}
+
+.trinity-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--trinity-space-lg) var(--trinity-space-xl);
+    border-bottom: 1px solid var(--trinity-border-subtle);
+    background: var(--trinity-glass);
+}
+
+.trinity-modal-body {
+    padding: var(--trinity-space-xl);
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/* ============================================================================
+   Cylon Animation
+   ============================================================================ */
+
+@keyframes trinity-scan {
+    0% { left: -50%; }
+    100% { left: 100%; }
+}
+
+.trinity-cylon {
+    position: relative;
+    height: 2px;
+    background: var(--trinity-border-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.trinity-cylon-bar {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(90deg, transparent, var(--trinity-primary), #82B1FF, transparent);
+    animation: trinity-scan 3s ease-in-out infinite alternate;
+}
+
+/* ============================================================================
+   Sparkline Chart
+   ============================================================================ */
+
+.trinity-sparkline {
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+    height: 20px;
+}
+
+.trinity-sparkline-bar {
+    flex: 1;
+    background: var(--trinity-primary);
+    opacity: 0.6;
+    border-radius: 1px 1px 0 0;
+    transition: height 0.3s ease;
+}
+
+.trinity-sparkline-bar:last-child {
+    opacity: 1;
+}

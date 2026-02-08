@@ -1,0 +1,22 @@
+{
+    "typeCheckingMode": "standard",
+    "pythonVersion": "3.12",
+    "include": [
+        "corpus",
+        "jobs",
+        "angel.py",
+        "trinity.py",
+        "security.py"
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__",
+        ".venv",
+        "social"
+    ],
+    "reportOptionalMemberAccess": "warning",
+    "reportArgumentType": "warning",
+    "reportReturnType": "warning",
+    "reportIndexIssue": "warning",
+    "reportAttributeAccessIssue": "warning"
+}

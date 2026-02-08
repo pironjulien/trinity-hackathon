@@ -1,0 +1,185 @@
+:root {
+  --trinity-bg: #0d0d0d;
+  --trinity-header-h: 40px;
+  --hud-height: 316px;
+  /* Fixed height for bottom controls */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--trinity-bg);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* =========================================
+   MAIN STAGE (Video / Web / Offline)
+   Takes remaining space after HUD
+   ========================================= */
+.main-stage {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+}
+
+.fullscreen-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Don't crop - show full video */
+  background: #000;
+}
+
+/* SOTA 2026: Mobile Responsive - fixed 1280x720 scale */
+.webview-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The wrapper creates the 1920x1080 space (Full HD) */
+.webview-scaler {
+  width: 1920px;
+  height: 1080px;
+  transform-origin: top left;
+  /* Scale will be applied via inline styles in App.tsx */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.webview-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
+}
+
+.offline-overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #333;
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.offline-msg.connecting {
+  color: #00ff88;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* =========================================
+   HUD LAYER (Bottom Controls)
+   Fixed height, aligned panels
+   ========================================= */
+.hud-layer {
+  height: var(--hud-height);
+  flex-shrink: 0;
+  background: var(--vscode-sideBar-background, #252526);
+  padding: 15px 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  /* Both columns same height */
+}
+
+.hud-offline {
+  /* Just visual dimming, DO NOT disable pointer events globally */
+  filter: grayscale(100%);
+  opacity: 1;
+  background: var(--vscode-sideBar-background, #252526);
+  /* Same as normal */
+}
+
+/* Specific elements to disable when offline */
+.hud-offline .bottom-panels,
+.hud-offline .console-panel,
+.hud-offline .stats-panel {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Commands MUST remain active */
+.hud-offline .commands-container {
+  opacity: 1;
+  filter: none;
+  pointer-events: auto;
+}
+
+/* Layout Columns */
+.col-left {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.bottom-panels {
+  display: flex;
+  gap: 10px;
+}
+
+/* Console Panel - matches col-left height exactly */
+.console-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--trinity-bg-card, #1e1e1e);
+  border-radius: var(--trinity-radius-lg, 12px);
+  border: 1px solid var(--trinity-border-subtle);
+  overflow: hidden;
+  min-height: 0;
+  max-height: 100%;
+  /* Critical: don't exceed parent */
+}

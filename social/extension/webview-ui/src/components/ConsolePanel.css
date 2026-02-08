@@ -1,0 +1,97 @@
+.console-panel {
+    display: flex;
+    flex-direction: column;
+    background: var(--trinity-bg-card, #1e1e1e);
+    border-radius: var(--trinity-radius-lg, 12px);
+    border: 1px solid var(--trinity-border-subtle);
+    overflow: hidden;
+    /* Height driven by flex parent, no fixed values */
+    min-height: 0;
+}
+
+/* Tabs */
+.tabs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--trinity-space-lg, 16px);
+    background: #252526;
+    border-bottom: 1px solid var(--trinity-border-light);
+    flex-shrink: 0;
+}
+
+.tabs-list {
+    display: flex;
+    gap: var(--trinity-space-xl, 24px);
+}
+
+.tab-item {
+    padding: var(--trinity-space-md, 14px) 0;
+    font-size: var(--trinity-font-size-base, 12px);
+    font-weight: 500;
+    color: var(--trinity-text-muted, #888);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.tab-item:hover {
+    color: var(--trinity-text-secondary, #ccc);
+}
+
+.tab-item.active {
+    color: var(--trinity-primary, #8AB4F8);
+    font-weight: 600;
+}
+
+.ink-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--trinity-primary, #8AB4F8);
+    border-radius: 3px 3px 0 0;
+    animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* Tools */
+.tools-list {
+    display: flex;
+    gap: var(--trinity-space-sm, 8px);
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    font-size: var(--trinity-font-size-lg, 16px);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    color: var(--trinity-text-secondary, #aaa);
+    transition: all 0.2s;
+}
+
+.icon-btn:hover {
+    background: var(--trinity-glass-hover);
+    color: var(--trinity-text-primary);
+}
+
+/* Console */
+.console-wrapper {
+    flex: 1;
+    background: var(--trinity-bg-table, #252629);
+    position: relative;
+    overflow: auto;
+    min-height: 0;
+}

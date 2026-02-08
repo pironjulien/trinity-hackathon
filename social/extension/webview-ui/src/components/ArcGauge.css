@@ -1,0 +1,36 @@
+.arc-gauge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--trinity-space-xs, 4px);
+    background: var(--trinity-bg-card, #1e1e1e);
+    border-radius: var(--trinity-radius-md, 8px);
+    border: 1px solid var(--trinity-border-subtle, rgba(255, 255, 255, 0.05));
+}
+
+.gauge-svg {
+    width: 70px;
+    height: 40px;
+}
+
+.arc-bg {
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+.arc-value {
+    transition: stroke-dashoffset 0.5s ease-out, stroke 0.3s ease;
+}
+
+.percent-text {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--trinity-font-mono, monospace);
+}
+
+.gauge-label {
+    font-size: var(--trinity-font-size-xs, 10px);
+    font-weight: 600;
+    color: var(--trinity-text-muted, #888);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

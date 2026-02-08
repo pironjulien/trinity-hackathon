@@ -1,0 +1,108 @@
+.stats-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--trinity-space-sm, 8px);
+}
+
+/* RAM Tooltip Container */
+.ram-container,
+.cpu-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.ram-container.has-tooltip {
+    cursor: help;
+}
+
+.ram-tooltip {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-5px);
+    background: var(--vscode-editor-background);
+    border: 1px solid var(--vscode-widget-border);
+    border-radius: 6px;
+    padding: 8px;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    pointer-events: none;
+}
+
+.ram-container:hover .ram-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.cpu-container:hover .ram-tooltip {
+    opacity: 1;
+    visibility: visible;
+    left: 0;
+    transform: translateY(0);
+}
+
+.tooltip-header {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--vscode-descriptionForeground);
+    margin-bottom: 8px;
+    text-align: center;
+    border-bottom: 1px solid var(--vscode-widget-border);
+    padding-bottom: 4px;
+}
+
+.tooltip-row {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.tooltip-row:last-child {
+    margin-bottom: 0;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.dot-angel {
+    background-color: #4285F4;
+}
+
+.dot-trinity {
+    background-color: #EA4335;
+}
+
+.dot-chrome {
+    background-color: #FBBC05;
+}
+
+.dot-vscode {
+    background-color: #34A853;
+}
+
+.dot-other {
+    background-color: var(--vscode-disabledForeground);
+}
+
+.label {
+    flex: 1;
+    color: var(--vscode-foreground);
+}
+
+.value {
+    color: var(--vscode-textPreformat-foreground);
+    font-family: var(--vscode-editor-font-family);
+}

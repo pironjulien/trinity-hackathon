@@ -1,0 +1,20 @@
+{
+    "name": "TRINITY.JULIENPIRON.FR",
+    "short_name": "TRINITY",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#050510",
+    "theme_color": "#00f3ff",
+    "icons": [
+        {
+            "src": "/images/pi-logo.webp",
+            "sizes": "192x192",
+            "type": "image/webp"
+        },
+        {
+            "src": "/images/pi-logo.webp",
+            "sizes": "512x512",
+            "type": "image/webp"
+        }
+    ]
+}

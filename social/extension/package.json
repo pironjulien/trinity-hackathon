@@ -1,0 +1,108 @@
+{
+    "name": "8810",
+    "displayName": "Trinity 8810",
+    "description": "Neural Control Center for Autonomous AI Systems - Real-time monitoring, process control, and log streaming for Trinity ecosystem.",
+    "version": "1.4.6",
+    "publisher": "julienpironfr",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/julienpironfr/Trinity"
+    },
+    "icon": "assets/images/icon.webp",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Visualization",
+        "Other"
+    ],
+    "keywords": [
+        "AI",
+        "Autonomous",
+        "Gemini",
+        "Control Center",
+        "Trinity",
+        "Monitoring"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "trinity.openControlCenter",
+                "title": "Trinity 8810: Open Control Center",
+                "category": "Trinity"
+            },
+            {
+                "command": "trinity.startAngel",
+                "title": "Trinity 8810: Start Backend",
+                "category": "Trinity"
+            },
+            {
+                "command": "trinity.stopAngel",
+                "title": "Trinity 8810: Stop Backend",
+                "category": "Trinity"
+            },
+            {
+                "command": "trinity.openJulesBrief",
+                "title": "Trinity 8810: Jules Morning Brief",
+                "category": "Trinity"
+            },
+            {
+                "command": "trinity.jules.sendToChat",
+                "title": "Discuss with Jules",
+                "category": "Jules"
+            },
+            {
+                "command": "trinity.jules.debugChat",
+                "title": "Debug Chat Integration",
+                "category": "Jules"
+            },
+            {
+                "command": "trinity.openStagedProjects",
+                "title": "Trinity 8810: Jules Staged Projects",
+                "category": "Trinity"
+            },
+            {
+                "command": "trinity.refreshJules",
+                "title": "Trinity 8810: Refresh Jules Panel",
+                "category": "Trinity"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run package",
+        "compile": "npm run build:webview && node esbuild.js",
+        "watch": "npm run build:webview && node esbuild.js --watch",
+        "package": "npm run build:webview && node esbuild.js --production",
+        "publish": "npm run package && npx vsce publish -p $VSCE_PAT && npx ovsx publish -p $OPEN_VSX_PAT",
+        "compile-tests": "tsc -p . --outDir out",
+        "watch-tests": "tsc -p . -w --outDir out",
+        "pretest": "npm run compile-tests && npm run compile",
+        "test": "node ./out/test/runTest.js",
+        "build:webview": "cd webview-ui && npm install && npm run build",
+        "lint": "eslint src --ext .ts",
+        "lint:fix": "eslint src --ext .ts --fix"
+    },
+    "devDependencies": {
+        "@types/glob": "^8.1.0",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^25.0.9",
+        "@types/vscode": "^1.85.0",
+        "@types/ws": "^8.18.1",
+        "@typescript-eslint/eslint-plugin": "^8.53.0",
+        "@typescript-eslint/parser": "^8.53.0",
+        "@vscode/test-electron": "^2.3.2",
+        "esbuild": "^0.27.2",
+        "eslint": "^9.39.2",
+        "glob": "^13.0.0",
+        "globals": "^17.0.0",
+        "mocha": "^11.7.5",
+        "typescript": "^5.9.3"
+    },
+    "dependencies": {
+        "ws": "^8.19.0"
+    }
+}
