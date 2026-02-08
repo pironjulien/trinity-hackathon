@@ -14,9 +14,9 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const users = [
-    { email: 'admin@trinity.local', password: 'Shiva2692' },
-    { email: 'tester@trinity.local', password: 'Deepmind1979' },
-    { email: 'smith@trinity.local', password: 'smith123' }  // Min 6 chars required
+    { email: 'admin@trinity.local', password: 'admin_password_123' },
+    { email: 'tester@trinity.local', password: 'test_password_123' },
+    { email: 'smith@trinity.local', password: 'user_password_123' }  // Min 6 chars required
 ];
 
 async function createUsers() {

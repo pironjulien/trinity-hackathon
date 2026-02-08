@@ -9,7 +9,7 @@ const EMAIL_DOMAIN = '@trinity.local';
 
 // Allowlist for Google Sign-In (only these emails can login via Google)
 const ALLOWED_GOOGLE_EMAILS = [
-    'julienpiron.fr@gmail.com',  // Admin
+    // 'admin@example.com',  // Admin (Replace with your email)
     // Add other authorized Google emails here
 ];
 
