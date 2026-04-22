@@ -1,3 +1,8 @@
+> [!WARNING]
+> **ARCHIVED: Hackathon Snapshot**
+> This repository is a frozen snapshot from the Gemini 3 Global Hackathon. 
+> The autonomous digital organism Trinity continues to evolve. Follow her active development and current status on [julienpiron.fr](https://julienpiron.fr).
+
 <div align="center">
 
 <h1 align="center" style="font-family: 'Product Sans', sans-serif; font-size: 30px;">
